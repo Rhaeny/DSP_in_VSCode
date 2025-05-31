@@ -1,0 +1,70 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Dynamic Server Page",
+	"patterns": [
+		{
+			"include": "text.html.basic"
+		},
+		{
+			"begin": "%\\s*([a-zA-Z_][a-zA-Z0-9_]*)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.dsp"
+				},
+				"0": {
+					"name": "punctuation.definition.block.dsp"
+				}
+			},
+			"end": "%",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.block.dsp"
+				}
+			},
+			"patterns": [
+				{
+					"match": "\"[^\"]*\"",
+					"name": "string.quoted.double.dsp"
+				},
+				{
+					"match": "'[^']*'",
+					"name": "string.quoted.single.dsp"
+				},
+				{
+					"match": "\\b[a-zA-Z0-9_.:/]+\\b",
+					"name": "entity.name.function.dsp"
+				}
+			]
+		},
+		{
+			"match": "%end[a-zA-Z0-9_]+%",
+			"name": "keyword.control.dsp.end"
+		},
+		{
+			"match": "%[a-zA-Z_][a-zA-Z0-9_]*%",
+			"name": "variable.language.dsp"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.dsp",
+					"match": "\\b(if|while|for|return)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.dsp",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dsp",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "text.dsp"
+}

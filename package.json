@@ -1,0 +1,40 @@
+{
+  "name": "dsp",
+  "displayName": "Dynamic Server Page (DSP)",
+  "description": "Syntax higlighting for Dynamic server page (DSP).",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "dsp",
+        "aliases": [
+          "Dynamic Server Page",
+          "DSP",
+          "dsp"
+        ],
+        "extensions": [
+          ".dsp",
+          ".DSP"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dsp",
+        "scopeName": "text.dsp",
+        "path": "./syntaxes/dsp.tmLanguage.json",
+        "embeddedLanguages": {
+          "html": "html",
+          "javascript": "javascript"
+        }
+      }
+    ]
+  }
+}
