@@ -2,6 +2,8 @@
   "name": "dsp",
   "displayName": "Dynamic Server Page (DSP)",
   "description": "Syntax higlighting for Dynamic server page (DSP).",
+  "publisher": "DusanCholeva",
+  "icon": "images/icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.100.0"
